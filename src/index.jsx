@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { Analytics } from "@vercel/analytics/react"
 
 const darkTheme = createTheme({
   palette: {
@@ -18,7 +17,6 @@ root.render(
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <App />
-      <Analytics />
     </ThemeProvider>
   </React.StrictMode>
 );
