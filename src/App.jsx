@@ -266,6 +266,10 @@ function App() {
           </div>
           <div className="picker">
             <Picker setCharacter={setCharacter} />
+            <Button color="secondary" onClick={() => {
+              setCharacter(Math.floor(Math.random() * characters.length));
+              setLoaded(false);
+            }}>Random</Button>
           </div>
           <div className="buttons">
             <Button color="secondary" onClick={copy}>
