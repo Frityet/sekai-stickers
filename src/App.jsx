@@ -156,6 +156,7 @@ function App() {
 
   return <>
     <Analytics/>
+    <p hidden>Analytics enabled!</p>
     <div className="App">
       <Info open={infoOpen} handleClose={handleClose}/>
       <div className="container">
