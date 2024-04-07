@@ -11,7 +11,7 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 
-export default function Info({ open, handleClose, config }) {
+export default function Info({ open, handleClose }) {
   return (
     <div>
       <Dialog
@@ -106,6 +106,21 @@ export default function Info({ open, handleClose, config }) {
                 button
                 onClick={() =>
                   (window.location.href =
+                    "https://github.com/Frityet/sekai-stickers")
+                }
+              >
+                <ListItemAvatar>
+                  <Avatar
+                    alt="GitHub"
+                    src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                  />
+                </ListItemAvatar>
+                <ListItemText primary="GitHub" secondary="Source Code (Updated fork, what this is running)" />
+              </ListItem>
+              <ListItem
+                button
+                onClick={() =>
+                  (window.location.href =
                     "https://github.com/TheOriginalAyaka/sekai-stickers")
                 }
               >
@@ -115,7 +130,7 @@ export default function Info({ open, handleClose, config }) {
                     src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
                   />
                 </ListItemAvatar>
-                <ListItemText primary="GitHub" secondary="Source Code" />
+                <ListItemText primary="GitHub" secondary="Source Code (Original)" />
               </ListItem>
             </List>
             <Typography variant="h6" component="h3">
@@ -141,13 +156,6 @@ export default function Info({ open, handleClose, config }) {
                 />
               </ListItem>
             </List>
-            <Typography variant="h6" component="h3">
-              Total stickers made using the app:
-              <br />
-              {config?.global
-                ? config?.global.toLocaleString() + " Sticker"
-                : "not available"}
-            </Typography>
           </DialogContentText>
         </DialogContent>
         <DialogActions>

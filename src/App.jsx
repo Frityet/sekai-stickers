@@ -8,26 +8,15 @@ import Button from "@mui/material/Button";
 import Switch from "@mui/material/Switch";
 import Picker from "./components/Picker";
 import Info from "./components/Info";
-import getConfiguration from "./utils/config";
 import log from "./utils/log";
 
 const { ClipboardItem } = window;
 
 function App() {
-  const [config, setConfig] = useState(null);
-
   // using this to trigger the useEffect because lazy to think of a better way
   const [rand, setRand] = useState(0);
   useEffect(() => {
-    try {
-      const data = async () => {
-        const res = await getConfiguration();
-        setConfig(res);
-      };
-      data();
-    } catch (error) {
-      console.log(error);
-    }
+
   }, [rand]);
 
   const [infoOpen, setInfoOpen] = useState(false);
@@ -130,7 +119,7 @@ function App() {
   const download = async () => {
     const canvas = document.getElementsByTagName("canvas")[0];
     const link = document.createElement("a");
-    link.download = `${characters[character].name}_st.ayaka.one.png`;
+    link.download = `${characters[character].name}_sekai-sticker.png`;
     link.href = canvas.toDataURL();
     link.click();
     await log(characters[character].id, characters[character].name, "download");
@@ -167,10 +156,7 @@ function App() {
 
   return (
     <div className="App">
-      <Info open={infoOpen} handleClose={handleClose} config={config} />
-      <div className="counter">
-        Total Stickers you made: {config?.total || "Not available"}
-      </div>
+      <Info open={infoOpen} handleClose={handleClose}/>
       <div className="container">
         <div className="vertical">
           <div className="canvas">
