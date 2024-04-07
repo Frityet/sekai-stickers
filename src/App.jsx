@@ -9,7 +9,7 @@ import Switch from "@mui/material/Switch";
 import Picker from "./components/Picker";
 import Info from "./components/Info";
 import log from "./utils/log";
-
+import { Analytics } from "@vercel/analytics/react"
 const { ClipboardItem } = window;
 
 function App() {
@@ -154,7 +154,8 @@ function App() {
     setRand(rand + 1);
   };
 
-  return (
+  return <>
+    <Analytics/>
     <div className="App">
       <Info open={infoOpen} handleClose={handleClose}/>
       <div className="container">
@@ -273,7 +274,7 @@ function App() {
         </div>
       </div>
     </div>
-  );
+  </>;
 }
 
 export default App;
