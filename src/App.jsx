@@ -9,7 +9,6 @@ import Switch from "@mui/material/Switch";
 import Picker from "./components/Picker";
 import Info from "./components/Info";
 import getConfiguration from "./utils/config";
-import { Analytics } from "@vercel/analytics/react"
 import log from "./utils/log";
 import { bannerViewed, setBannerViewed } from "./utils/banner";
 
@@ -170,7 +169,6 @@ function App() {
 
   return (
     <div className="App">
-      <Analytics />
       <Info open={infoOpen} handleClose={handleClose} config={config} />
       {!bannerView && (
         <div className="bannercontainer">
