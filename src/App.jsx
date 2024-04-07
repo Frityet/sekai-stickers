@@ -122,6 +122,7 @@ function App() {
           ctx.strokeText(lines[i], 0, k);
           ctx.fillText(lines[i], 0, k);
           k += spaceSize;
+          ctx.translate(0, fontSize);
         }
         ctx.restore();
       }
