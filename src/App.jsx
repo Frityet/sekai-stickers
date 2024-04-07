@@ -54,13 +54,13 @@ function App() {
   const img = new Image();
 
   useEffect(() => {
-    setText(characters[character].defaultText.text);
-    setPosition({
-      x: characters[character].defaultText.x,
-      y: characters[character].defaultText.y,
-    });
-    setRotate(characters[character].defaultText.r);
-    setFontSize(characters[character].defaultText.s);
+    // setText(characters[character].defaultText.text);
+    // setPosition({
+    //   x: characters[character].defaultText.x,
+    //   y: characters[character].defaultText.y,
+    // });
+    // setRotate(characters[character].defaultText.r);
+    // setFontSize(characters[character].defaultText.s);
     setLoaded(false);
   }, [character]);
 
